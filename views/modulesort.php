@@ -19,7 +19,7 @@ foreach (array_keys(c('EnabledApplications')) as $app) {
         '</form>',
         wrap($app, 'h1'),
         '<ol class="Sortable Sort-'.$app.'" data-appname="'.$app.'">';
-    foreach (c('Modules.'.$app.'.Panel', array()) as $module) {
+    foreach (c('Modules.'.$app.'.Panel', []) as $module) {
         echo sprintf($item, $module);
     }
     echo '</ol>';

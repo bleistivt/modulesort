@@ -1,6 +1,6 @@
 <?php
 
-$PluginInfo['modulesort'] = array(
+$PluginInfo['modulesort'] = [
     'Name' => 'Module Sort',
     'Description' => 'Allows changing the order of modules in the panel.',
     'Version' => '0.1',
@@ -9,7 +9,7 @@ $PluginInfo['modulesort'] = array(
     'Author' => 'Bleistivt',
     'AuthorUrl' => 'http://bleistivt.net',
     'License' => 'GNU GPL2'
-);
+];
 
 class ModuleSortPlugin extends Gdn_Plugin {
 
@@ -32,6 +32,7 @@ class ModuleSortPlugin extends Gdn_Plugin {
         $sender->title(t('Module Sort Order'));
         $sender->render('modulesort', '', 'plugins/modulesort');
     }
+
 
     public function base_getAppSettingsMenuItems_handler($sender, &$args) {
         $args['SideMenu']->addLink(
