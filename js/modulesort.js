@@ -3,7 +3,7 @@
 jQuery(function ($) {
     'use strict';
 
-    var lists = $('ol.Sortable'),
+    var lists = $('ol.modulesort'),
         update = function () {
             var modules = {};
 
@@ -23,14 +23,14 @@ jQuery(function ($) {
 
     lists.sortable({forcePlaceholderSize: true}).on('sortupdate', update);
 
-    $('.AddModule').submit(function (e) {
+    $('.modulesort-add').submit(function (e) {
         var $this = $(e.currentTarget),
-            input = $this.find('.InputBox'),
-            list = $('ol.Sort-' + $this.data('group'));
+            input = $this.find('.form-control'),
+            list = $('ol.sort-' + $this.data('group'));
 
-        $('.Dummy li')
+        $('.modulesort-dummy li')
             .clone().data('name', input.val())
-            .find('.Name').text(input.val())
+            .find('.plank-title').text(input.val())
             .end().prependTo(list);
 
         list.sortable();
@@ -40,7 +40,7 @@ jQuery(function ($) {
         return false;
     });
 
-    $('.RemoveModule').click(function (e) {
+    lists.on('click', '.modulesort-remove', function (e) {
         $(e.currentTarget).closest('li').remove();
         update();
     });
