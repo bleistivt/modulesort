@@ -1,21 +1,10 @@
 <?php
 
-$PluginInfo['modulesort'] = [
-    'Name' => 'Module Sort',
-    'Description' => 'Allows changing the order of modules in the panel.',
-    'Version' => '0.1',
-    'SettingsUrl' => 'settings/modulesort',
-    'SettingsPermission' => 'Garden.Settings.Manage',
-    'Author' => 'Bleistivt',
-    'AuthorUrl' => 'http://bleistivt.net',
-    'License' => 'GNU GPL2'
-];
-
 class ModuleSortPlugin extends Gdn_Plugin {
 
     public function settingsController_moduleSort_create($sender, $reset = false) {
         $sender->permission('Garden.Settings.Manage');
-        $sender->addSideMenu('settings/modulesort');
+        $sender->setHighlightRoute('settings/modulesort');
 
         $sender->addJsFile('html.sortable.min.js', 'plugins/modulesort');
         $sender->addJsFile('modulesort.js', 'plugins/modulesort');
@@ -33,8 +22,7 @@ class ModuleSortPlugin extends Gdn_Plugin {
         $sender->render('modulesort', '', 'plugins/modulesort');
     }
 
-
-    public function base_getAppSettingsMenuItems_handler($sender, &$args) {
+    public function base_getAppSettingsMenuItems_handler($sender, $args) {
         $args['SideMenu']->addLink(
             'Appearance',
             t('Module Sort Order'),
