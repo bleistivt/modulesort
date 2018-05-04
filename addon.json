@@ -1,0 +1,17 @@
+{
+    "name": "Module Sort",
+    "description": "Allows changing the order of modules in the panel.",
+    "version": "0.2",
+    "settingsUrl": "settings/modulesort",
+    "settingsPermission": "Garden.Settings.Manage",
+    "license": "GNU GPL2",
+    "gitHub": "bleistivt/modulesort",
+    "key": "modulesort",
+    "type": "addon",
+    "authors": [
+        {
+            "name": "Bleistivt",
+            "homepage": "http://bleistivt.net"
+        }
+    ]
+}
