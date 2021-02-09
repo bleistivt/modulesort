@@ -18,14 +18,14 @@ class ModuleSortPlugin extends Gdn_Plugin {
             }
         }
 
-        $sender->title(t('Module Sort Order'));
+        $sender->title(Gdn::translate('Module Sort Order'));
         $sender->render('modulesort', '', 'plugins/modulesort');
     }
 
     public function base_getAppSettingsMenuItems_handler($sender, $args) {
         $args['SideMenu']->addLink(
             'Appearance',
-            t('Module Sort Order'),
+            Gdn::translate('Module Sort Order'),
             'settings/modulesort',
             'Garden.Settings.Manage'
         );
